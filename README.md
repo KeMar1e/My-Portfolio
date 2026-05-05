@@ -21,7 +21,7 @@ this is my little corner on the internet where i share the things i build, desig
 ---
 
 ## 🟢 live site
-🔗 [here](https://kemar1e.github.io/KeMar1e-s-Portfolio/)
+🔗 [here](https://kemar1e.github.io/My-Portfolio/)
 
 ---
 

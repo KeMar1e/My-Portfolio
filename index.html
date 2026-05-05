@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>kemar1e · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- THEME TOGGLE -->
+<button id="theme-toggle" title="Toggle dark/light mode">🔆</button>
+
+<!-- CLOCK -->
+<div id="clock"></div>
+
+<!-- ══ HUB WINDOW ════════════════════════════ -->
+<div id="hub">
+  <div class="hub-bar">
+    <div class="hub-dots">
+      <div class="hub-dot dot-r"></div>
+      <div class="hub-dot dot-y"></div>
+      <div class="hub-dot dot-g"></div>
+    </div>
+  </div>
+  <div class="hub-body">
+    <div class="hub-greeting">hi! <em>i'm kemar1e</em> ✦</div>
+    <div class="hub-sub">designer · developer · creator</div>
+
+    <div class="hub-nav">
+      <button class="nav-btn" onclick="openWin('win-about')">
+        <div class="nav-icon">🌸</div>
+        about
+      </button>
+      <button class="nav-btn" onclick="openWin('win-projects')">
+        <div class="nav-icon">💻</div>
+        work
+      </button>
+      <button class="nav-btn" onclick="openWin('win-certs')">
+        <div class="nav-icon">🏅</div>
+        certs
+      </button>
+      <button class="nav-btn" onclick="openWin('win-contact')">
+        <div class="nav-icon">📩</div>
+        contact
+      </button>
+    </div>
+
+    <div class="hub-wave"></div>
+  </div>
+</div>
+
+<!-- ══ ABOUT WINDOW ══════════════════════════ -->
+<div class="win" id="win-about" style="width:460px;">
+  <div class="win-bar" onmousedown="startDrag(event,'win-about')">
+    <div class="win-dots">
+      <div class="hub-dot dot-r"></div>
+      <div class="hub-dot dot-y"></div>
+      <div class="hub-dot dot-g"></div>
+    </div>
+    <div class="win-title">about me</div>
+    <button class="win-close" onclick="closeWin('win-about')">✕</button>
+  </div>
+  <div class="win-body">
+    <div class="about-top">
+      <div class="avatar-wrap">
+        <img src="../img/mypic.png" alt="mypic">
+        <!-- <div class="avatar-inner">KM</div> -->
+      </div>
+      <div>
+        <div class="about-name">Kate Marie Faye Manuba</div>
+        <div class="about-role">designer · developer · creator</div>
+        <div class="about-loc">📍 Philippines</div>
+      </div>
+    </div>
+
+    <p class="about-bio">
+      hi! i'm kemar1e, a designer and developer based in the Philippines. i love building things that are both beautiful and functional — from thoughtful web experiences to creative side projects. :)
+      <br><br>
+      interested in working together? <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kemar1e.data@gmail.com" target="_blank" rel="noopener">send me an email!</a>
+    </p>
+
+    <div class="sec-label">skills</div>
+    <div class="chips">
+      <span class="chip">UI / UX</span>
+      <span class="chip">Web Dev</span>
+      <span class="chip">HTML</span>
+      <span class="chip">CSS</span>
+      <span class="chip">JavaScript</span>
+      <span class="chip">Java</span>
+      <span class="chip">MySQL</span>
+    </div>
+
+    <div class="sec-label">education</div>
+    <div class="edu-box">
+      <div class="edu-deg">B.S. Computer Engineering</div>
+      <div class="edu-sch">Marinduque State University · Class of 2027</div>
+    </div>
+
+    <div class="sec-label">other interests</div>
+    <ul class="dot-list">
+      <li>design systems &amp; creative coding</li>
+      <li>photography &amp; visual storytelling</li>
+      <li>puzzle games &amp; cozy aesthetics</li>
+      <li>coffee and reading ☕📖</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══ PROJECTS WINDOW ═══════════════════════ -->
+<div class="win" id="win-projects" style="width:500px;">
+  <div class="win-bar" onmousedown="startDrag(event,'win-projects')">
+    <div class="win-dots">
+      <div class="hub-dot dot-r"></div>
+      <div class="hub-dot dot-y"></div>
+      <div class="hub-dot dot-g"></div>
+    </div>
+    <div class="win-title">projects</div>
+    <button class="win-close" onclick="closeWin('win-projects')">✕</button>
+  </div>
+  <div class="win-body">
+    <p style="font-size:.80rem;color:var(--muted);margin-bottom:14px; text-align: center;">clicking a project opens it in a new tab! ✦</p>
+    <div class="proj-grid">
+
+      <a href="https://github.com/KeMar1e" target="_blank" rel="noopener" class="proj-card">
+        <div class="proj-thumb">🐕</div>
+        <!-- <img src="../img/mypic.png" alt="proj-thumb"> -->
+        <div class="proj-body">
+          <div class="proj-tag">Web App</div>
+          <div class="proj-title">Hapi Vet</div>
+          <div class="proj-desc">Veterinary Clinic Managemant System</div>
+          <div class="proj-link">view →</div>
+        </div>
+      </a>
+
+      <a href="https://kemar1e.github.io/Priority-Scheduling-Algorithm-Calculator/" target="_blank" rel="noopener" class="proj-card">
+        <img src="../proj/proj-002.png" class="proj-thumb">
+        <div class="proj-body">
+          <div class="proj-tag">Website</div>
+          <div class="proj-title">Priority Scheduling Algorithm Calculator</div>
+          <div class="proj-desc">Compute Priority Scheduling Algorithm</div>
+          <div class="proj-link">view →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ CERTIFICATES WINDOW ═══════════════════ -->
+<div class="win" id="win-certs" style="width:500px;">
+  <div class="win-bar" onmousedown="startDrag(event,'win-certs')">
+    <div class="win-dots">
+      <div class="hub-dot dot-r"></div>
+      <div class="hub-dot dot-y"></div>
+      <div class="hub-dot dot-g"></div>
+    </div>
+    <div class="win-title">certificates</div>
+    <button class="win-close" onclick="closeWin('win-certs')">✕</button>
+  </div>
+  <div class="win-body">
+    <p style="font-size:.80rem;color:var(--muted);margin-bottom:14px; text-align: center;">click any certificate to view it full-size! ✦</p>
+    <div class="cert-list">
+
+      <div class="cert-card" onclick="openLb('../cert/cert-003.jpg')">
+        <div class="cert-thumb-strip">
+          💻
+          <div class="cert-overlay"><span>view ✦</span></div>
+        </div>
+        <div class="cert-foot">
+          <div class="cert-name">"Enterprise Cybersecurity Resilience: Harnessing Segmented Networks and Multi-layered Defense"</div>
+          <div class="cert-host">Institute of Computer Engineering (ICPEP), Inc. Qatar Chapter</div>
+          <div class="cert-theme">Theme: Empowering Computer Engineers &amp; IT Professionals in Qatar through Innovation, Learning, and Community.</div>
+        </div>
+      </div>
+
+      <div class="cert-card" onclick="openLb('../cert/cert-002.jpg')">
+        <div class="cert-thumb-strip">
+          📷
+          <div class="cert-overlay"><span>view ✦</span></div>
+        </div>
+        <div class="cert-foot">
+          <div class="cert-name">"Fundamentals of Image Processing using MATLAB and OpenCV"</div>
+          <div class="cert-host">Department of Computer Engineering</div>
+          <!-- <div class="cert-theme">Theme: </div> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTACT WINDOW ════════════════════════ -->
+<div class="win" id="win-contact" style="width:360px;">
+  <div class="win-bar" onmousedown="startDrag(event,'win-contact')">
+    <div class="win-dots">
+      <div class="hub-dot dot-r"></div>
+      <div class="hub-dot dot-y"></div>
+      <div class="hub-dot dot-g"></div>
+    </div>
+    <div class="win-title">contact</div>
+    <button class="win-close" onclick="closeWin('win-contact')">✕</button>
+  </div>
+  <div class="win-body">
+    <div class="contact-intro">
+      <h2>yay, a message! 💌</h2>
+      <p>the best way to reach me is via email — i'll get back to you asap! :)</p>
+    </div>
+    <div class="clinks">
+
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kemar1e.data@gmail.com" target="_blank" rel="noopener" class="clink">
+        <div class="clink-icon">✉️</div>
+        <div>
+          <div class="clink-type">Gmail</div>
+          <div class="clink-val">kemar1e.data@gmail.com</div>
+        </div>
+      </a>
+
+      <!-- <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener" class="clink">
+        <div class="clink-icon">💼</div>
+        <div>
+          <div class="clink-type">linkedin</div>
+          <div class="clink-val">linkedin.com/in/yourhandle</div>
+        </div>
+      </a> -->
+
+      <a href="https://github.com/KeMar1e" target="_blank" rel="noopener" class="clink">
+        <div class="clink-icon">🐙</div>
+        <div>
+          <div class="clink-type">github</div>
+          <div class="clink-val">github.com/KeMar1e</div>
+        </div>
+      </a>
+
+      <a href="https://instagram.com/kemarifey" target="_blank" rel="noopener" class="clink">
+        <div class="clink-icon">📸</div>
+        <div>
+          <div class="clink-type">instagram</div>
+          <div class="clink-val">@kemarifey</div>
+        </div>
+      </a>
+
+      <a href="https://facebook.com/kemarifey" target="_blank" rel="noopener" class="clink">
+        <div class="clink-icon">🔵</div>
+        <div>
+          <div class="clink-type">facebook</div>
+          <div class="clink-val">facebook.com/kemarifey</div>
+        </div>
+      </a>
+
+    </div>
+    <p style="font-size:.80rem;color:var(--muted);text-align:center;margin-top:14px;">links open in a new tab · email opens your mail app ✦</p>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lb" onclick="closeLb(event)">
+  <button id="lb-x" onclick="event.stopPropagation(); closeLb()">✕</button>
+  <img id="lb-img" src="" alt="Certificate">
+</div>
+
+<!-- FOOTER -->
+<footer>© kemar1e 2026</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

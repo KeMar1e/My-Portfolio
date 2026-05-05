@@ -1,4 +1,44 @@
-/* ── CLOCK ────────────────────────────────── */
+/* ── SFX ──────────────────────────────────── */
+const sfx = {
+  open:  new Audio('audio/open.mp3'),
+  close: new Audio('audio/close.mp3'),
+  hover: new Audio('audio/hover.mp3'),
+};
+
+// tasteful volumes
+sfx.open.volume  = 0.5;
+sfx.close.volume = 0.5;
+sfx.hover.volume = 0.3;
+
+// rewind & play so rapid triggers never get swallowed
+function playSound(name) {
+  const s = sfx[name];
+  if (!s) return;
+  s.currentTime = 0;
+  s.play().catch(() => {}); // silently ignore browser autoplay blocks
+}
+
+// attach hover SFX to all interactive elements
+function attachHoverSfx() {
+  const targets = document.querySelectorAll(
+    'button, a, .nav-btn, .proj-card, .cert-card, .clink, .chip, .win-close, #theme-toggle'
+  );
+  targets.forEach(el => {
+    el.addEventListener('mouseenter', () => playSound('hover'));
+  });
+}
+
+/* ── MUTE TOGGLE ──────────────────────────── */
+const muteBtn = document.getElementById('mute-toggle');
+let muted = false;
+
+muteBtn.addEventListener('click', () => {
+  muted = !muted;
+  Object.values(sfx).forEach(s => s.muted = muted);
+  muteBtn.textContent = muted ? '🔇' : '🔈';
+});
+
+
 function tick() {
   document.getElementById('clock').textContent =
     new Date().toLocaleTimeString('en-PH', { hour: '2-digit', minute: '2-digit', hour12: true }) +
@@ -24,12 +64,14 @@ function openWin(id) {
   win.classList.remove('closing');
   win.style.zIndex = ++z;
   win.classList.add('open');
+  playSound('open');
   requestAnimationFrame(() => centerWin(win));
 }
 
 function closeWin(id) {
   const win = document.getElementById(id);
   win.classList.add('closing');
+  playSound('close');
   win.addEventListener('animationend', () => win.classList.remove('open', 'closing'), { once: true });
 }
 
@@ -170,3 +212,6 @@ toggle.addEventListener('click', () => {
 
   loop();
 })();
+
+// attach hover sounds after everything is set up
+attachHoverSfx();
